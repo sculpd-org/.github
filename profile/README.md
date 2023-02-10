@@ -1,4 +1,4 @@
-<p align="center"><a href="https://sculpd.com" target="_blank"><img src="https://raw.githubusercontent.com/sculpd-org/art/master/logo-type/5%20SVG/2%20RGB/1%20Full%20Color/logo-type-rgb-blue.svg" width="400"></a></p>
+<p align="center"><a href="https://sculpd.com" target="_blank"><img src="https://raw.githubusercontent.com/sculpd-org/art/master/logo-type/5%20SVG/2%20RGB/1%20Full%20Color/logo-type-rgb-blue.svg" width="300"></a></p>
 
 ## About Sculpd
 
