@@ -1,0 +1,64 @@
+name: Deploy to Lambda
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: integer
+      lambda-url:
+        required: true
+        type: string
+    secrets:
+      environment:
+        required: true
+        type: string
+      aws-access-key-id:
+        required: true
+        type: string
+      aws-secret-access-key:
+        required: true
+        type: string
+      aws-region:
+        required: true
+        type: string
+      function-name:
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+
+  deploy:
+    name: Deploy to Lambda
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ secrets.environment }}
+      url: ${{ inputs.lambda-url }}
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install Node dependencies
+        run: npm ci --omit=dev --ignore-scripts
+
+      - name: Zip Package
+        run: zip -rq lambda.zip node_modules index.js
+
+      - name: Deploy to Lambda
+        uses: appleboy/lambda-action@master
+        with:
+          aws_access_key_id: ${{ secrets.aws-access-key-id }}
+          aws_secret_access_key: ${{ secrets.aws-secret-access-key }}
+          aws_region: ${{ secrets.aws-region }}
+          function_name: ${{ secrets.function-name }}
+          zip_file: ./lambda.zip
+          publish: false
