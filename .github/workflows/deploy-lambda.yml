@@ -12,19 +12,14 @@ on:
     secrets:
       environment:
         required: true
-        type: string
       aws-access-key-id:
         required: true
-        type: string
       aws-secret-access-key:
         required: true
-        type: string
       aws-region:
         required: true
-        type: string
       function-name:
         required: true
-        type: string
 
 jobs:
 
