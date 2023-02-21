@@ -42,8 +42,7 @@ jobs:
 
       - name: Install Node dependencies
         run: |
-          npm pkg delete scripts.prepare
-          && npm ci --only=prod --omit=dev
+          npm pkg delete scripts.prepare && npm ci --only=prod --omit=dev
 
       - name: Zip Package
         run: zip -rq lambda.zip node_modules index.js
