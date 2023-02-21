@@ -41,7 +41,9 @@ jobs:
           node-version: ${{ inputs.node-version }}
 
       - name: Install Node dependencies
-        run: npm ci --only=prod --omit=dev
+        run: |
+          npm pkg delete scripts.prepare
+          && npm ci --only=prod --omit=dev
 
       - name: Zip Package
         run: zip -rq lambda.zip node_modules index.js
