@@ -12,14 +12,19 @@ on:
     secrets:
       environment:
         required: true
+        type: string
       aws-access-key-id:
         required: true
+        type: string
       aws-secret-access-key:
         required: true
+        type: string
       aws-region:
         required: true
+        type: string
       function-name:
         required: true
+        type: string
 
 jobs:
 
@@ -47,9 +52,9 @@ jobs:
       - name: Deploy to Lambda
         uses: appleboy/lambda-action@master
         with:
-          aws_access_key_id: ${{ secrets.aws-access-key-id }}
-          aws_secret_access_key: ${{ secrets.aws-secret-access-key }}
-          aws_region: ${{ secrets.aws-region }}
-          function_name: ${{ secrets.function-name }}
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_REGION }}
+          function_name: ${{ secrets.FUNCTION_NAME }}
           zip_file: ./lambda.zip
           publish: false
