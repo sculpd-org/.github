@@ -3,6 +3,9 @@ name: Deploy to Lambda
 on:
   workflow_call:
     inputs:
+      environment:
+        required: true
+        type: string
       node-version:
         required: true
         type: string
@@ -10,8 +13,6 @@ on:
         required: true
         type: string
     secrets:
-      environment:
-        required: true
       aws-access-key-id:
         required: true
       aws-secret-access-key:
@@ -26,7 +27,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: Production
+      name: ${{ inputs.environment }}
       url: ${{ inputs.lambda-url }}
     steps:
 
