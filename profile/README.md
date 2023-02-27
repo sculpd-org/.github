@@ -10,5 +10,3 @@ More than ever we need to find ways to take our minds off the world's problems a
 - **Everything you need to get started** - Our kits provide all the tools and materials you need to make something you can be proud of.
 - **Detailed step-by-step guides** - Take a look through our step-by-step guides which make it easy for anyone to start their creative journey from home.
 - **Gift their favourite new hobby** - Craft something you can keep, or, gift one of our kits and introduce someone to their new favourite hobby.
-
-With UPS as our global shipping and storage partner, your possessions will be available to you whenever you need them, throughout the US. And with the UPS network of warehouses, your boxes are delivered in 3-days or less.
