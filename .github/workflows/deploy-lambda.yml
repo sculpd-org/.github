@@ -45,7 +45,7 @@ jobs:
           npm pkg delete scripts.prepare && npm ci --only=prod --omit=dev
 
       - name: Zip Package
-        run: zip -rq lambda.zip node_modules index.js
+        run: zip -rq lambda.zip node_modules index.js index.mjs
 
       - name: Deploy to Lambda
         uses: appleboy/lambda-action@master
